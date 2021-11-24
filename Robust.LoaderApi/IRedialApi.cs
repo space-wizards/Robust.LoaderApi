@@ -17,6 +17,7 @@ namespace Robust.LoaderApi
         ///     *It is expected that the engine use the --ss14-address parameter for redialling to the same server.*
         /// </summary>
         /// <param name="uri">The server Uri, such as "ss14://localhost:1212/".</param>
-        void Redial(Uri uri);
+        /// <param name="text">Informational text on the cause of the reconnect. Empty gives a default reason.</param>
+        void Redial(Uri uri, string text = "");
     }
 }
