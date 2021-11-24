@@ -14,5 +14,10 @@ namespace Robust.LoaderApi
         ///     File API usable to read files from the engine's installation directory.
         /// </summary>
         IFileApi FileApi { get; }
+
+        /// <summary>
+        ///     Redialling API usable to cause a connection to a new (or the same) server. Only provided if supported.
+        /// </summary>
+        IRedialApi? RedialApi => null;
     }
 }
