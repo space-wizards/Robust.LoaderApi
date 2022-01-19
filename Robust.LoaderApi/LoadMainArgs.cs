@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Robust.LoaderApi
 {
     /// <summary>
@@ -19,5 +21,10 @@ namespace Robust.LoaderApi
         ///     Redialling API usable to cause a connection to a new (or the same) server. Only provided if supported.
         /// </summary>
         IRedialApi? RedialApi => null;
+
+        /// <summary>
+        /// Extra file APIs to mount into the VFS.
+        /// </summary>
+        IEnumerable<ApiMount>? ApiMounts => null;
     }
 }
