@@ -13,6 +13,10 @@ namespace Robust.LoaderApi
         /// <summary>
         ///     Try to read a file from the engine installation.
         /// </summary>
+        /// <remarks>
+        /// Streams returned are guaranteed to be seekable. To improve performance,
+        /// call <see cref="AllowNonSeekableStreams"/> to disable this guarantee.
+        /// </remarks>
         /// <param name="path">The path of the file.</param>
         /// <param name="stream">The file stream, if the file was found.</param>
         /// <returns>True if the file exists and was opened, false otherwise.</returns>
@@ -25,5 +29,13 @@ namespace Robust.LoaderApi
         ///     The engine is expected to cache this.
         /// </remarks>
         IEnumerable<string> AllFiles { get; }
+
+        /// <summary>
+        /// Call to indicate that non-seekable streams may be returned
+        /// from subsequent streams returned by <see cref="TryOpen"/>.
+        /// </summary>
+        void AllowNonSeekableStreams()
+        {
+        }
     }
 }
