@@ -361,3 +361,6 @@ MigrationBackup/
 
 
 .idea/
+
+# C# Dev Kit cache file
+*.lscache
